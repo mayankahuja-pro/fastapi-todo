@@ -1,4 +1,3 @@
-```markdown
 # 🚀 FastAPI Todo API
 
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
@@ -6,23 +5,24 @@
 [![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 [![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)](https://jwt.io/)
 
-A production-ready **RESTful API** designed for backend internship technical assessments. Demonstrates proficiency in **JWT Authentication**, **ORM Integration**, and **Scalable Project Architecture**. 
+A production-ready **RESTful API** designed for backend internship technical assessments. Demonstrates proficiency in **JWT Authentication**, **ORM Integration**, and **Scalable Project Architecture**.
+
 ---
 
 ## ✨ Features
 
-- 🔐 **Secure Auth**: JWT-based authentication with Bcrypt password hashing.
-- 🏗 **Clean Architecture**: Separation of concerns (Models, Schemas, CRUD, Routes).
-- 🛠 **Robust Validation**: Data integrity enforced via Pydantic.
-- 📖 **Auto-Docs**: Interactive Swagger & ReDoc documentation.
-- 🚦 **CRUD**: Full lifecycle management for Todo resources.
+- 🔐 **Secure Auth**: JWT-based authentication with Bcrypt password hashing
+- 🏗 **Clean Architecture**: Separation of concerns (Models, Schemas, CRUD, Routes)
+- 🛠 **Robust Validation**: Data integrity enforced via Pydantic
+- 📖 **Auto-Docs**: Interactive Swagger & ReDoc documentation
+- 🚦 **Full CRUD**: Complete lifecycle management for Todo resources
 
 ---
 
 ## 🛠 Tech Stack
 
 | Component | Technology |
-| :--- | :--- |
+|:----------|:-----------|
 | **Framework** | FastAPI |
 | **ORM** | SQLAlchemy |
 | **Database** | SQLite (Development) |
@@ -36,9 +36,9 @@ A production-ready **RESTful API** designed for backend internship technical ass
 ```text
 fastapi-todo/
 ├── app/
-│   ├── auth.py          # JWT & Password logic
+│   ├── auth.py          # JWT & password logic
 │   ├── crud.py          # Database abstraction layer
-│   ├── database.py      # Engine & Session configuration
+│   ├── database.py      # Engine & session configuration
 │   ├── main.py          # FastAPI entry point
 │   ├── models.py        # SQLAlchemy database models
 │   └── schemas.py       # Pydantic validation schemas
@@ -51,23 +51,26 @@ fastapi-todo/
 ## 🚀 Getting Started
 
 ### 1. Setup Environment
+
 ```bash
-# Clone & Enter
+# Clone & enter directory
 git clone https://github.com/your-username/fastapi-todo.git
 cd fastapi-todo
 
-# Virtual Env
+# Create virtual environment
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 
-# Install
+# Install dependencies
 pip install -r requirements.txt
 ```
 
 ### 2. Launch Server
+
 ```bash
 uvicorn app.main:app --reload
 ```
+
 🔗 **API Portal:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ---
@@ -75,14 +78,16 @@ uvicorn app.main:app --reload
 ## 📑 API Reference
 
 ### Authentication
+
 | Method | Endpoint | Description |
-| :--- | :--- | :--- |
+|:-------|:---------|:------------|
 | `POST` | `/signup` | Create a new user account |
-| `POST` | `/login` | Authenticate & receive Bearer Token |
+| `POST` | `/login` | Authenticate & receive Bearer token |
 
 ### Todo Management
+
 | Method | Endpoint | Description |
-| :--- | :--- | :--- |
+|:-------|:---------|:------------|
 | `GET` | `/todos` | Retrieve all tasks for current user |
 | `POST` | `/todos` | Create a new task |
 | `PUT` | `/todos/{id}` | Update task status or content |
@@ -90,23 +95,21 @@ uvicorn app.main:app --reload
 
 ---
 
-## 🧠 Core Competencies Shown
+## 🧠 Core Competencies Demonstrated
 
-- **Dependency Injection**: Managing database sessions and user state.
-- **Middleware/Security**: Protecting routes using OAuth2 schemes.
-- **Data Modeling**: Relational mapping between Users and Todos.
-- **Error Handling**: Graceful API responses with proper HTTP status codes.
+- **Dependency Injection**: Managing database sessions and user state
+- **Middleware/Security**: Protecting routes using OAuth2 schemes
+- **Data Modeling**: Relational mapping between Users and Todos
+- **Error Handling**: Graceful API responses with proper HTTP status codes
 
 ---
 
 ## 👨‍💻 Author
 
-**Mayank Ahuja**  
- 
+**Mayank Ahuja**
 
 ---
 
 ## ⭐ Support
 
 If this project helped you, please give it a **Star**!
-```
