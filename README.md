@@ -1,170 +1,112 @@
-```md
-# FastAPI Todo API 🚀
+```markdown
+# 🚀 FastAPI Todo API
 
-A beginner-friendly **FastAPI backend project** built to demonstrate **REST API development, JWT authentication, and database integration** using SQLAlchemy.  
-This project is designed specifically for **backend internship interviews**.
+[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
+[![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)](https://jwt.io/)
+
+A production-ready **RESTful API** designed for backend internship technical assessments. Demonstrates proficiency in **JWT Authentication**, **ORM Integration**, and **Scalable Project Architecture**. 
+---
+
+## ✨ Features
+
+- 🔐 **Secure Auth**: JWT-based authentication with Bcrypt password hashing.
+- 🏗 **Clean Architecture**: Separation of concerns (Models, Schemas, CRUD, Routes).
+- 🛠 **Robust Validation**: Data integrity enforced via Pydantic.
+- 📖 **Auto-Docs**: Interactive Swagger & ReDoc documentation.
+- 🚦 **CRUD**: Full lifecycle management for Todo resources.
 
 ---
 
 ## 🛠 Tech Stack
 
-- **FastAPI** – Web framework
-- **SQLAlchemy** – ORM
-- **SQLite** – Database
-- **Pydantic** – Data validation
-- **JWT (python-jose)** – Authentication
-- **Passlib (bcrypt)** – Password hashing
-- **Uvicorn** – ASGI server
+| Component | Technology |
+| :--- | :--- |
+| **Framework** | FastAPI |
+| **ORM** | SQLAlchemy |
+| **Database** | SQLite (Development) |
+| **Security** | Python-Jose (JWT), Passlib (Bcrypt) |
+| **Server** | Uvicorn |
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
+```text
+fastapi-todo/
+├── app/
+│   ├── auth.py          # JWT & Password logic
+│   ├── crud.py          # Database abstraction layer
+│   ├── database.py      # Engine & Session configuration
+│   ├── main.py          # FastAPI entry point
+│   ├── models.py        # SQLAlchemy database models
+│   └── schemas.py       # Pydantic validation schemas
+├── requirements.txt     # Dependency manifest
+└── README.md            # Documentation
 ```
 
-fastapi-todo/
-│
-├── app/
-│   ├── main.py        # Application entry point
-│   ├── database.py    # Database configuration
-│   ├── models.py      # SQLAlchemy models
-│   ├── schemas.py     # Pydantic schemas
-│   ├── auth.py        # Authentication & JWT logic
-│   ├── crud.py        # Database operations
-│
-├── requirements.txt
-└── README.md
-
-````
-
 ---
 
-## ⚙️ Installation & Setup
+## 🚀 Getting Started
 
-### 1️⃣ Clone the repository
+### 1. Setup Environment
 ```bash
+# Clone & Enter
 git clone https://github.com/your-username/fastapi-todo.git
 cd fastapi-todo
-````
 
-### 2️⃣ Create virtual environment
-
-```bash
+# Virtual Env
 python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
-```
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-### 3️⃣ Install dependencies
-
-```bash
+# Install
 pip install -r requirements.txt
 ```
 
----
-
-## ▶️ Run the Application
-
+### 2. Launch Server
 ```bash
 uvicorn app.main:app --reload
 ```
-
-Server will start at:
-
-```
-http://127.0.0.1:8000
-```
+🔗 **API Portal:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ---
 
-## 📖 API Documentation
+## 📑 API Reference
 
-FastAPI provides interactive API docs automatically:
+### Authentication
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | `/signup` | Create a new user account |
+| `POST` | `/login` | Authenticate & receive Bearer Token |
 
-* **Swagger UI** → [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-* **ReDoc** → [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
-
----
-
-## 🔐 Authentication Flow (JWT)
-
-1. User signs up with email and password
-2. Password is securely hashed using bcrypt
-3. User logs in and receives a JWT access token
-4. Token is used to access protected endpoints
-
----
-
-## 🔗 API Endpoints
-
-### 🔹 Auth
-
-| Method | Endpoint  | Description           |
-| ------ | --------- | --------------------- |
-| POST   | `/signup` | Register new user     |
-| POST   | `/login`  | Login & get JWT token |
-
-### 🔹 Todos
-
-| Method | Endpoint      | Description        |
-| ------ | ------------- | ------------------ |
-| POST   | `/todos`      | Create a todo      |
-| GET    | `/todos`      | Get all user todos |
-| PUT    | `/todos/{id}` | Update todo        |
-| DELETE | `/todos/{id}` | Delete todo        |
+### Todo Management
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/todos` | Retrieve all tasks for current user |
+| `POST` | `/todos` | Create a new task |
+| `PUT` | `/todos/{id}` | Update task status or content |
+| `DELETE` | `/todos/{id}` | Remove a task |
 
 ---
 
-## 🧠 Key Concepts Demonstrated
+## 🧠 Core Competencies Shown
 
-* RESTful API design
-* Dependency Injection (`Depends`)
-* JWT-based authentication
-* Password hashing
-* ORM vs raw SQL
-* Pydantic schema validation
-* Clean project structure
-
----
-
-## 🎯 Why This Project?
-
-This project was built to:
-
-* Practice **backend fundamentals**
-* Understand **FastAPI architecture**
-* Prepare for **backend internship interviews**
-
----
-
-## 🚀 Future Improvements
-
-* Role-based access control
-* Refresh tokens
-* Pagination & filtering
-* Docker support
-* Deployment (Render / Fly.io)
+- **Dependency Injection**: Managing database sessions and user state.
+- **Middleware/Security**: Protecting routes using OAuth2 schemes.
+- **Data Modeling**: Relational mapping between Users and Todos.
+- **Error Handling**: Graceful API responses with proper HTTP status codes.
 
 ---
 
 ## 👨‍💻 Author
 
-**Your Name**
-Backend Developer | FastAPI Enthusiast
-
-📌 *This project is part of my backend internship preparation.*
+**Mayank Ahuja**  
+ 
 
 ---
 
-## ⭐ If you like this project
+## ⭐ Support
 
-Give it a ⭐ and feel free to fork or contribute!
-
-```
-
-If you want, I can:
-- Tailor this README to **your exact code**
-- Write a **strong resume bullet**
-- Help you answer **“Explain your project”** perfectly for interview
-
-Just say the word 🔥
+If this project helped you, please give it a **Star**!
 ```
